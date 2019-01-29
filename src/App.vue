@@ -10,6 +10,10 @@
   margin: 0;
   text-decoration: none;
   color: black;
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
+}
+img {
+  width: 100%;
+  height: 100%;
 }
 </style>

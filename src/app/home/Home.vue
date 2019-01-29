@@ -7,29 +7,18 @@
       </div>
     </section>
     <section class="projects">
-      <h1 class="title">{{projectTitle}}</h1>
-      <template>
-        <div class="project">
-          <img
-            src="https://res.cloudinary.com/dknhwkfxm/image/upload/v1548727292/easyvet/img01.jpg"
-          >
-          <h1>Project name</h1>
-          <p>A multi disciplinary designer with a strong entrepreneurial background, I have more than 10 years of experience.</p>
-          <span>
-            more
-            <i class="arrow right icon"></i>
-          </span>
-        </div>
-        <div class="project">
-          <img
-            src="https://res.cloudinary.com/dknhwkfxm/image/upload/v1548727292/easyvet/img01.jpg"
-          >
-          <h1>Project name</h1>
-          <p>A multi disciplinary designer with a strong entrepreneurial background, I have more than 10 years of experience.</p>
-          <span>
-            more
-            <i class="arrow right icon"></i>
-          </span>
+      <h1 class="title">{{projectTitleLabel}}</h1>
+      <template v-for="project in allProjects">
+        <div class="project" :key="project.id">
+          <img :src="project.thumb">
+          <h1>{{project.name}}</h1>
+          <p>{{project.shortDescription}}</p>
+          <router-link :to='{path: `work/${project.id}`}'>
+            <span class="more">
+              more
+              <i class="arrow right icon"></i>
+            </span>
+          </router-link>
         </div>
       </template>
     </section>
@@ -38,10 +27,15 @@
 
 <script>
 export default {
+  computed: {
+    allProjects() {
+      return this.$store.state.allProjects;
+    }
+  },
   data() {
     return {
       mainTitle: "Product designer from Sao Paulo, Brazil",
-      projectTitle: "Selected projects"
+      projectTitleLabel: "Selected projects"
     };
   }
 };
@@ -77,18 +71,16 @@ export default {
       font-size: 8rem;
     }
     .project {
+      height: 400px;
       width: 100%;
       padding: 3em 5em;
-      transition: 0.3s;
+      transition: 1s;
       position: relative;
-      height: 400px;
       img {
         position: absolute;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
         top: 0;
         left: 0;
+        transition: 1s;
       }
       h1 {
         text-transform: uppercase;
@@ -103,12 +95,12 @@ export default {
         width: 50%;
         color: #87898b;
       }
-      span {
+      span.more {
         display: none;
         font-size: 1.4rem;
         color: white;
-        position: relative;
-        bottom: -3em;
+        position: absolute;
+        bottom: 1em;
         cursor: pointer;
         i {
           color: #8b8b8b;
@@ -118,8 +110,11 @@ export default {
         background: black;
         h1,
         p,
-        span {
+        span.more {
           display: block;
+        }
+        img {
+          display: none;
         }
       }
     }
