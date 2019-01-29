@@ -16,4 +16,8 @@ img {
   width: 100%;
   height: 100%;
 }
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
 </style>

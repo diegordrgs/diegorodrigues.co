@@ -1,0 +1,72 @@
+<template>
+  <div class="project-card">
+    <img :src="project.thumb">
+    <h1>{{project.name}}</h1>
+    <p>{{project.shortDescription}}</p>
+    <router-link :to="{path: `work/${project.id}`}">
+      <span class="more">
+        more
+        <i class="arrow right icon"></i>
+      </span>
+    </router-link>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    project: Object
+  }
+};
+</script>
+
+<style scoped lang="scss">
+.project-card {
+  height: 400px;
+  width: 100%;
+  padding: 3em 5em;
+  transition: 1s;
+  position: relative;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 1s;
+  }
+  h1 {
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: bolder;
+    display: none;
+    color: white;
+  }
+  p {
+    font-size: 1.5rem;
+    display: none;
+    width: 50%;
+    color: #87898b;
+  }
+  span.more {
+    display: none;
+    font-size: 1.4rem;
+    color: white;
+    position: absolute;
+    bottom: 1em;
+    cursor: pointer;
+    i {
+      color: #8b8b8b;
+    }
+  }
+  &:hover {
+    background: black;
+    h1,
+    p,
+    span.more {
+      display: block;
+    }
+    img {
+      display: none;
+    }
+  }
+}
+</style>

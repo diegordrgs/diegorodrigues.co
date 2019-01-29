@@ -1,5 +1,5 @@
 <template>
-  <article class="home">
+  <article class="home container">
     <section class="welcome">
       <i class="arrow down icon"></i>
       <div class="main-title">
@@ -9,24 +9,18 @@
     <section class="projects">
       <h1 class="title">{{projectTitleLabel}}</h1>
       <template v-for="project in allProjects">
-        <div class="project" :key="project.id">
-          <img :src="project.thumb">
-          <h1>{{project.name}}</h1>
-          <p>{{project.shortDescription}}</p>
-          <router-link :to='{path: `work/${project.id}`}'>
-            <span class="more">
-              more
-              <i class="arrow right icon"></i>
-            </span>
-          </router-link>
-        </div>
+        <ProjectCard :project='project' :key="project.id"/>
       </template>
     </section>
   </article>
 </template>
 
 <script>
+import ProjectCard from '@/_components/ProjectCard'
 export default {
+  components: {
+    ProjectCard
+  },
   computed: {
     allProjects() {
       return this.$store.state.allProjects;
@@ -40,12 +34,10 @@ export default {
   }
 };
 </script>
-<style lang="scss">
+<style scoped lang="scss">
 .home {
   display: grid;
   justify-content: center;
-  width: 80%;
-  margin: 0 auto;
   .welcome {
     display: flex;
     justify-content: space-between;
@@ -69,54 +61,6 @@ export default {
     .title {
       text-transform: uppercase;
       font-size: 8rem;
-    }
-    .project {
-      height: 400px;
-      width: 100%;
-      padding: 3em 5em;
-      transition: 1s;
-      position: relative;
-      img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        transition: 1s;
-      }
-      h1 {
-        text-transform: uppercase;
-        font-size: 3rem;
-        font-weight: bolder;
-        display: none;
-        color: white;
-      }
-      p {
-        font-size: 1.715rem;
-        display: none;
-        width: 50%;
-        color: #87898b;
-      }
-      span.more {
-        display: none;
-        font-size: 1.4rem;
-        color: white;
-        position: absolute;
-        bottom: 1em;
-        cursor: pointer;
-        i {
-          color: #8b8b8b;
-        }
-      }
-      &:hover {
-        background: black;
-        h1,
-        p,
-        span.more {
-          display: block;
-        }
-        img {
-          display: none;
-        }
-      }
     }
   }
 }

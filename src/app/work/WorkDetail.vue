@@ -1,5 +1,5 @@
 <template>
-  <article class="work-detail">
+  <article class="work-detail container">
     <section class="presentation">
       <h1 class="title">{{project.name}}</h1>
       <div class="datas">
@@ -42,10 +42,8 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .work-detail {
-  width: 80%;
-  margin: 0 auto;
   h1.title {
     font-size: 8rem;
   }
