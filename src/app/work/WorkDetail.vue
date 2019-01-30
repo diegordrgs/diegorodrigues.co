@@ -46,6 +46,7 @@ export default {
 .work-detail {
   h1.title {
     font-size: 8rem;
+    text-transform: uppercase;
   }
   p {
     color: #87898b;

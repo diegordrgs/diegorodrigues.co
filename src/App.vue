@@ -1,8 +1,20 @@
 <template>
-  <div id="app">
+  <article>
+    <Header/>
     <router-view/>
-  </div>
+    <Footer/>
+  </article>
 </template>
+<script>
+import Header from '@/_components/Header'
+import Footer from '@/_components/Footer'
+export default {
+  components: {
+    Header,
+    Footer
+  }  
+}
+</script>
 
 <style lang="scss">
 * {
@@ -19,5 +31,11 @@ img {
 .container {
   width: 80%;
   margin: 0 auto;
+}
+section {
+  margin: 1em 0;
+}
+.arrow {
+  width: 5%;
 }
 </style>

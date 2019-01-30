@@ -5,7 +5,7 @@ export default {
     {
       id: 1,
       name: "Easy.vet",
-      shortDescription: "Easy.vet wanted to create a pet shop management system",
+      shortDescription: "A multi disciplinary designer with a strong entrepreneurial background, I have more than 10 years of experience.",
       description: "Easy.vet wanted to create a pet shop management system that stood out where most other systems fail, in the visual and usability aspect. After extensive research of the market, I tried to identify the main functions that the system could offer to the clients.",
       liveProject: "http://www.google.com",
       thumb: "https://res.cloudinary.com/dknhwkfxm/image/upload/v1548727292/easyvet/img01.jpg",

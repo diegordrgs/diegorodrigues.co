@@ -1,22 +1,22 @@
 <template>
   <article class="home container">
     <section class="welcome">
-      <i class="arrow down icon"></i>
+      <img class='arrow' src="@/assets/arrowdown.svg">
       <div class="main-title">
-        <h1>{{mainTitle}}</h1>
+        <span>Product designer </span><span style="margin: 0 1em">from</span><br/><span>Sao Paulo,</span><br/><span style="margin: 0 1em">Brazil</span>
       </div>
     </section>
     <section class="projects">
-      <h1 class="title">{{projectTitleLabel}}</h1>
+      <span class="title">Selected projects</span>
       <template v-for="project in allProjects">
-        <ProjectCard :project='project' :key="project.id"/>
+        <ProjectCard :project="project" :key="project.id"/>
       </template>
     </section>
   </article>
 </template>
 
 <script>
-import ProjectCard from '@/_components/ProjectCard'
+import ProjectCard from "@/_components/ProjectCard";
 export default {
   components: {
     ProjectCard
@@ -25,35 +25,26 @@ export default {
     allProjects() {
       return this.$store.state.allProjects;
     }
-  },
-  data() {
-    return {
-      mainTitle: "Product designer from Sao Paulo, Brazil",
-      projectTitleLabel: "Selected projects"
-    };
   }
 };
 </script>
 <style scoped lang="scss">
 .home {
-  display: grid;
-  justify-content: center;
   .welcome {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 4rem;
-    i {
-      color: #8b8b8b;
-    }
     .main-title {
       padding: 0.5em;
       border-bottom: 1px solid;
-      h1 {
+      span {
         text-align: center;
         font-size: 10rem;
         text-transform: uppercase;
-        font-weight: bolder;
+        font-weight: bold;
+        line-height: 0.83;
+        letter-spacing: -4px;
       }
     }
   }
@@ -61,6 +52,9 @@ export default {
     .title {
       text-transform: uppercase;
       font-size: 8rem;
+      line-height: 0.8;
+      letter-spacing: -2.2px;
+      font-weight: bold;
     }
   }
 }

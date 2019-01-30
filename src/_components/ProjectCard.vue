@@ -27,6 +27,7 @@ export default {
   padding: 3em 5em;
   transition: 1s;
   position: relative;
+  margin: 5em 0;
   img {
     position: absolute;
     top: 0;
@@ -36,7 +37,7 @@ export default {
   h1 {
     text-transform: uppercase;
     font-size: 3rem;
-    font-weight: bolder;
+    font-weight: 900;
     display: none;
     color: white;
   }
