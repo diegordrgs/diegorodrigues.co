@@ -47,6 +47,7 @@
       letter-spacing: -2.2px;
       font-weight: bold;
       font-size: 5em;
+      text-transform: uppercase;
     }
   }
   .footer-bottom {
