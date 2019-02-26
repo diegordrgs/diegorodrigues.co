@@ -1,15 +1,15 @@
 <template>
-  <div class="project-card">
-    <img :src="project.thumb">
-    <h1>{{project.name}}</h1>
-    <p>{{project.shortDescription}}</p>
-    <router-link :to="{path: `work/${project.id}`}">
+  <router-link :to="{path: `work/${project.id}`}">
+    <div class="project-card">
+      <img :src="project.thumb">
+      <span class="title">{{project.name}}</span>
+      <p>{{project.shortDescription}}</p>
       <span class="more">
         more
         <i class="arrow right icon"></i>
       </span>
-    </router-link>
-  </div>
+    </div>
+  </router-link>
 </template>
 
 <script>
@@ -23,7 +23,7 @@ export default {
 <style scoped lang="scss">
 .project-card {
   height: 400px;
-  width: 100%;
+  width: 90%;
   padding: 3em 5em;
   transition: 1s;
   position: relative;
@@ -34,7 +34,7 @@ export default {
     left: 0;
     transition: 1s;
   }
-  h1 {
+  span.title {
     text-transform: uppercase;
     font-size: 3rem;
     font-weight: 900;
@@ -46,6 +46,7 @@ export default {
     display: none;
     width: 50%;
     color: #87898b;
+    margin-top: 3em;
   }
   span.more {
     display: none;
@@ -60,7 +61,7 @@ export default {
   }
   &:hover {
     background: black;
-    h1,
+    span.title,
     p,
     span.more {
       display: block;

@@ -18,10 +18,10 @@
         </a>
       </div>
       <div class="icon-menu">
-        <img src="@/assets/1-medium.svg">
-        <img src="@/assets/2-linkedin.svg">
-        <img src="@/assets/3-dribbble.svg">
-        <img src="@/assets/4-instagram.svg">
+        <a target="_blank" href="https://medium.com/@dirdrgs"> <img src="@/assets/1-medium.svg"> </a>
+        <a target="_blank" href="https://www.linkedin.com/in/diegordrgs/"> <img src="@/assets/2-linkedin.svg"> </a>
+        <a target="_blank" href="https://dribbble.com/diegorodrigues"> <img src="@/assets/3-dribbble.svg"> </a>
+        <a target="_blank" href="https://www.instagram.com/diegorodrigues.co/"> <img src="@/assets/4-instagram.svg"> </a>
       </div>
     </div>
   </nav>
@@ -48,6 +48,7 @@ export default {
   .item {
     padding: 1em;
     color: black;
+    font-weight: bold;
   }
   .item.text span:hover {
     cursor: pointer;
@@ -63,7 +64,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 35%;
+    width: 50%;
     .link-menu {
       width: 25%;
       display: flex;
@@ -72,10 +73,9 @@ export default {
     }
     .icon-menu {
       display: flex;
-      width: 25%;
+      width: 35%;
       justify-content: space-between;
       img {
-        width: 20%;
         cursor: pointer;
       }
 

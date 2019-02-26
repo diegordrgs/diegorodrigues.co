@@ -2,27 +2,23 @@
   <footer class="footer container">
     <div class="footer-top">
       <span class="title">Let's Talk</span>
-      <p style="margin-top: 1em">Get in touch, send an email:</p>
-      <p>
-        <strong>hi@diegorodrigues.co</strong>
-      </p>
     </div>
     <div class="footer-bottom">
       <div class="left-footer">
         <div class="item">
           <p>Send me an Email</p>
-          <strong>hi@diegorodrigues.co</strong>
+          <a href="mailto:hi@diegorodrigues.co"><strong>hi@diegorodrigues.co</strong></a>
         </div>
         <div class="item">
           <p>Feel free to talking</p>
-          <strong>+55 24 99944-7493</strong>
+          <a href="tel:+5524999447493"><strong>+55 24 99944-7493</strong></a>
         </div>
       </div>
       <div class="right-footer">
-        <img src="@/assets/1-medium.svg">
-        <img src="@/assets/2-linkedin.svg">
-        <img src="@/assets/3-dribbble.svg">
-        <img src="@/assets/4-instagram.svg">
+        <a target="_blank" href="https://medium.com/@dirdrgs"> <img src="@/assets/1-medium.svg"> </a>
+        <a target="_blank" href="https://www.linkedin.com/in/diegordrgs/"> <img src="@/assets/2-linkedin.svg"> </a>
+        <a target="_blank" href="https://dribbble.com/diegorodrigues"> <img src="@/assets/3-dribbble.svg"> </a>
+        <a target="_blank" href="https://www.instagram.com/diegorodrigues.co/"> <img src="@/assets/4-instagram.svg"> </a>
       </div>
     </div>
   </footer>
@@ -64,7 +60,6 @@
       justify-content: space-around;
       width: 20%;
       img {
-        width: 10%;
         cursor: pointer;
       }
     }
